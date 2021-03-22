@@ -1,12 +1,17 @@
 package ru.sber.javaschool;
 
-@Data
-public abstract class PersonPolyclinic {
-    private String Fio;// ФИО
-    private int age;// Возраст
-    private String sex;// Пол
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
-    public String Analysis() {
-        return "Доктор" + getFio() + " велел сдать анализ:" + "  ";
-    }
+@Data
+@AllArgsConstructor
+public abstract class PersonPolyclinic {
+    private int number; //Номер
+    private String Fio; // ФИО
+    private int age; // Возраст
+    private String sex; // Пол
+
+    abstract String Analysis();
+
+    abstract String WorkInfo();
 }
