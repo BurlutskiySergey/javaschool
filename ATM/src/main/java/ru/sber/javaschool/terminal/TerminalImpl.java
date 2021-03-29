@@ -8,6 +8,7 @@ import java.util.Scanner;
 
 @Data
 public class TerminalImpl implements Terminal {
+    /** Поле карт-ридер */
     private CardReader cardReader;
 
     private int requestPin() {
@@ -34,6 +35,11 @@ public class TerminalImpl implements Terminal {
 
     public void showBalance(Card card) {
         if (cardReader.checkCardAvailability()) {
+            /* здесь пришлось завести в интерфейсе Card метод getBalance,
+             т.к. он определяся в самом классе CardImpl(из-за авто-геттеров ломбока),
+             но не определялся в интерфейсе.
+             Или надо было в качестве типа параметра указывать CardImpl?
+             */
             BigDecimal balance = card.getBalance();
             System.out.println("Баланс карты: " + balance);
             stop();

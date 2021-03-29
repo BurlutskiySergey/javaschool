@@ -6,6 +6,7 @@ import ru.sber.javaschool.terminal.Terminal;
 
 @Data
 public class UserImpl implements User {
+    /** Поле карта */
     private Card card;
 
     @Override
