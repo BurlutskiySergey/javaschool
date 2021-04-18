@@ -7,7 +7,7 @@ import java.math.BigDecimal;
 import java.util.Scanner;
 
 @Data
-public class TerminalImpl implements Terminal {
+public class ATM implements Terminal {
     private CardReader cardReader;
 
     private int requestPin() {

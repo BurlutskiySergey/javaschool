@@ -5,7 +5,7 @@ import ru.sber.javaschool.card.Card;
 import ru.sber.javaschool.terminal.Terminal;
 
 @Data
-public class UserImpl implements User {
+public class CustomUser implements User {
     private Card card;
 
     @Override

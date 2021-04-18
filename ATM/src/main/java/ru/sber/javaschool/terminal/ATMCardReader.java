@@ -1,6 +1,6 @@
 package ru.sber.javaschool.terminal;
 
-public class CardReaderImpl implements CardReader {
+public class ATMCardReader implements CardReader {
     private boolean isCardInserted = false;
 
     @Override

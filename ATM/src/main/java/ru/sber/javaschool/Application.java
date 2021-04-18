@@ -1,24 +1,27 @@
 package ru.sber.javaschool;
 
-import ru.sber.javaschool.card.CardImpl;
+import ru.sber.javaschool.card.BankCard;
+import ru.sber.javaschool.card.Card;
+import ru.sber.javaschool.terminal.ATM;
+import ru.sber.javaschool.terminal.ATMCardReader;
 import ru.sber.javaschool.terminal.CardReader;
-import ru.sber.javaschool.terminal.CardReaderImpl;
-import ru.sber.javaschool.terminal.TerminalImpl;
-import ru.sber.javaschool.user.UserImpl;
+import ru.sber.javaschool.terminal.Terminal;
+import ru.sber.javaschool.user.CustomUser;
+import ru.sber.javaschool.user.User;
 
 import java.math.BigDecimal;
 
 public class Application {
     public static void main(String[] args) {
-        CardImpl card = new CardImpl();
+        Card card = new BankCard();
         card.setPinCode(1234);
         card.setBalance(BigDecimal.valueOf(1000.00));
-        CardReader cardReader = new CardReaderImpl();
-        TerminalImpl terminal = new TerminalImpl();
-        terminal.setCardReader(cardReader);
-        UserImpl user = new UserImpl();
+        CardReader cardReader = new ATMCardReader();
+        Terminal ATM = new ATM();
+        ATM.setCardReader(cardReader);
+        User user = new CustomUser();
         user.setCard(card);
-        user.insertCard(terminal);
-        user.requestBalance(terminal);
+        user.insertCard(ATM);
+        user.requestBalance(ATM);
     }
 }

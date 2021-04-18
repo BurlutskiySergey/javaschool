@@ -5,15 +5,12 @@ import lombok.Data;
 import java.math.BigDecimal;
 
 @Data
-public class CardImpl implements Card {
+public class BankCard implements Card {
     private int pinCode;
     private BigDecimal balance;
 
+    @Override
     public boolean checkPin(int pin) {
-        return pin == pinCode;
-    }
-
-    public BigDecimal getBalance() {
-        return balance;
+        return pin == this.pinCode;
     }
 }
