@@ -18,6 +18,12 @@ public interface Card {
      * @return возвращает баланс карты
      */
     BigDecimal getBalance();
+
+    /**
+     * Установить пин-код карты
+     * @param pinCode - пин-код
+     */
     void setPinCode(int pinCode);
+
     void setBalance(BigDecimal balance);
 }
