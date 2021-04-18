@@ -6,7 +6,9 @@ import java.math.BigDecimal;
 
 @Data
 public class BankCard implements Card {
+    /** Поле пин-кода */
     private int pinCode;
+    /** Поле баланса */
     private BigDecimal balance;
 
     @Override
