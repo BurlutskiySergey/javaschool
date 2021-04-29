@@ -1,15 +1,19 @@
 package ru.sber.javaschool.terminal;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import ru.sber.javaschool.account.Account;
 import ru.sber.javaschool.card.Card;
+import ru.sber.javaschool.processing.Processing;
+import ru.sber.javaschool.processing.ProcessingException;
 
-import java.math.BigDecimal;
 import java.util.Scanner;
 
-@Data
+@AllArgsConstructor
 public class ATM implements Terminal {
     /** Поле карт-ридер */
     private CardReader cardReader;
+    /** Поле процессинг */
+    private Processing processing;
 
     private int requestPin() {
         System.out.println("Введите пин код...");
@@ -20,10 +24,10 @@ public class ATM implements Terminal {
     private void verify(Card card) {
         int pin;
         pin = requestPin();
-        if (card.checkPin(pin)) {
-            System.out.println("Верификация пройдена");
-        } else {
-            System.out.println("Пин код неверный. Заберите карту.");
+        try {
+            processing.checkPinCode(card.getPinCode(), pin);
+        } catch (ProcessingException e) {
+            System.out.println(e.getMessage());
             stop();
         }
     }
@@ -35,9 +39,18 @@ public class ATM implements Terminal {
 
     public void showBalance(Card card) {
         if (cardReader.checkCardAvailability()) {
-            BigDecimal balance = card.getBalance();
-            System.out.println("Баланс карты: " + balance);
-            stop();
+            try {
+                processing.checkCardData(card.getCardNum(), card.getPinCode());
+                Account<?> account = processing.getAccountData(card.getCardNum());
+
+                System.out.println("Баланс счёта №: " + account.getAccountNum() +
+                        " составляет " + account.getBalance().getAmount() +
+                        "  " + account.getBalance().getCurrency()
+                );
+                stop();
+            } catch (ProcessingException e) {
+                System.out.println(e.getMessage());
+            }
         } else {
             System.out.println("Вставьте карту...");
         }

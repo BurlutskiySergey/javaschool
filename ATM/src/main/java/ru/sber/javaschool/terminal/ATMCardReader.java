@@ -1,5 +1,8 @@
 package ru.sber.javaschool.terminal;
 
+import lombok.Getter;
+
+@Getter
 public class ATMCardReader implements CardReader {
     /** Поле признака того, что карта вставлена в карт-ридер */
     private boolean isCardInserted = false;

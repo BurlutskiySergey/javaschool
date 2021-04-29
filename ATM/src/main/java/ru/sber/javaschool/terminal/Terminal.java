@@ -1,6 +1,7 @@
 package ru.sber.javaschool.terminal;
 
 import ru.sber.javaschool.card.Card;
+import ru.sber.javaschool.processing.ProcessingException;
 
 /**
  * Интерфейс терминала
@@ -16,11 +17,10 @@ public interface Terminal {
      * Показать баланс карты
      * @param card - карта, с которой работает терминал
      */
-    void showBalance(Card card);
+    void showBalance(Card card) throws ProcessingException;
 
     /**
      * Остановить работу
      */
     void stop();
-    void setCardReader(CardReader cardReader);
 }
