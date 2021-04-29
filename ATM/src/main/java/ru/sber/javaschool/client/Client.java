@@ -16,6 +16,11 @@ public class Client {
     /** Коллекция счетов клиента */
     private List<Account<Balance>> accounts;
 
+    /**
+     * Метод получения информации о счёте клиента по номеру карты
+     * @param cardNum - номер карты
+     * @return найденный счёт
+     */
     public Optional<Account<Balance>> findAccount(String cardNum) {
         return accounts.stream().filter(a -> a.findCard(cardNum) != null).findFirst();
     }

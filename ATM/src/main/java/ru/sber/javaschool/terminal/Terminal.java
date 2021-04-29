@@ -17,7 +17,7 @@ public interface Terminal {
      * Показать баланс карты
      * @param card - карта, с которой работает терминал
      */
-    void showBalance(Card card) throws ProcessingException;
+    void showBalance(Card card);
 
     /**
      * Остановить работу
