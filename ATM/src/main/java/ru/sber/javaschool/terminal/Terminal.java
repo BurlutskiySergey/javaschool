@@ -1,6 +1,7 @@
 package ru.sber.javaschool.terminal;
 
 import ru.sber.javaschool.card.Card;
+import ru.sber.javaschool.processing.ProcessingException;
 
 /**
  * Интерфейс терминала
@@ -22,5 +23,4 @@ public interface Terminal {
      * Остановить работу
      */
     void stop();
-    void setCardReader(CardReader cardReader);
 }

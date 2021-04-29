@@ -1,23 +1,26 @@
 package ru.sber.javaschool.card;
 
-import java.math.BigDecimal;
+import java.time.LocalDate;
 
 /**
  * Интерфейс карты
  */
 public interface Card {
     /**
-     * Проверить пин-код карты
-     * @param pinCode - введённый пин-код
-     * @return возвращает признак правильно ли введён пин-код
+     * Получить пин-код карты
+     * @return возвращает пин-код карты
      */
-    boolean checkPin(int pinCode);
+    int getPinCode();
 
     /**
-     * Получить баланс карты
-     * @return возвращает баланс карты
+     * Получить номер карты
+     * @return номер карты
      */
-    BigDecimal getBalance();
-    void setPinCode(int pinCode);
-    void setBalance(BigDecimal balance);
+    String getCardNum();
+
+    /**
+     * Получить дату истечения карты
+     * @return дата истечения карты
+     */
+    LocalDate getExpiredDate();
 }

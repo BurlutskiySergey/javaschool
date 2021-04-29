@@ -1,4 +1,4 @@
-package ru.sber.javaschool.terminal;
+package ru.sber.javaschool.terminal.devices.cardreader;
 
 /**
  * Интерфейс карт-ридера
