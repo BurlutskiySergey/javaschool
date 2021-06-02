@@ -2,6 +2,7 @@ package ru.sber.javaschool.examplejdbc;
 
 import java.sql.*;
 import java.util.Optional;
+import java.util.function.Consumer;
 
 public class ExampleJDBC {
     private String url;
@@ -10,6 +11,7 @@ public class ExampleJDBC {
         this.url = url;
     }
 
+    /* old style */
     public Optional<String> selectColumn() throws SQLException {
         try(Connection connection = getConnection().orElseThrow(JDBCConnectionException::new)) {
             try(Statement statement = connection.createStatement()) {
@@ -24,14 +26,13 @@ public class ExampleJDBC {
         }
     }
 
-    public Optional<String> selectTwoColumns() throws SQLException {
+    /* new style */
+    public void selectColumns(Consumer<String> consumer) throws SQLException {
         try(Connection connection = getConnection().orElseThrow(JDBCConnectionException::new)) {
             try(Statement statement = connection.createStatement()) {
                 try(ResultSet resultSet = statement.executeQuery("select name, age from animal")) {
-                    if (resultSet.next()) {
-                        return Optional.of(String.format("Name: %s, age: %d", resultSet.getString("NAME"), resultSet.getInt("age")));
-                    } else {
-                        return Optional.empty();
+                    while (resultSet.next()) {
+                        consumer.accept("Name: " + resultSet.getString("NAME") + ", age: " + resultSet.getString("age"));
                     }
                 }
             }
