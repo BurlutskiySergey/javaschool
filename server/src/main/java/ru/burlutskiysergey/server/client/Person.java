@@ -1,4 +1,4 @@
-package ru.burlutskiysergey.javaschool.client;
+package ru.burlutskiysergey.server.client;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

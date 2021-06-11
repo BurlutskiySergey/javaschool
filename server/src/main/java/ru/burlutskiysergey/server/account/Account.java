@@ -1,9 +1,9 @@
-package ru.burlutskiysergey.javaschool.account;
+package ru.burlutskiysergey.server.account;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import ru.burlutskiysergey.javaschool.card.Card;
-import ru.burlutskiysergey.javaschool.balance.Balance;
+import ru.burlutskiysergey.server.card.Card;
+import ru.burlutskiysergey.server.balance.Balance;
 
 import java.util.List;
 

@@ -1,7 +1,7 @@
-package ru.burlutskiysergey.javaschool.terminal;
+package ru.burlutskiysergey.server.terminal;
 
 import lombok.Data;
-import ru.burlutskiysergey.javaschool.card.Card;
+import ru.burlutskiysergey.server.card.Card;
 
 import java.math.BigDecimal;
 import java.util.Scanner;

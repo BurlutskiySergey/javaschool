@@ -1,4 +1,4 @@
-package ru.burlutskiysergey.javaschool.terminal;
+package ru.burlutskiysergey.server.terminal;
 
 public class ATMCardReader implements CardReader {
     /** Поле признака того, что карта вставлена в карт-ридер */

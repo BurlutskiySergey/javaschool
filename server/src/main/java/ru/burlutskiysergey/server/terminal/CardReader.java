@@ -1,4 +1,4 @@
-package ru.burlutskiysergey.javaschool.terminal;
+package ru.burlutskiysergey.server.terminal;
 
 /**
  * Интерфейс карт-ридера

@@ -1,17 +1,7 @@
-package ru.burlutskiysergey.javaschool;
+package ru.burlutskiysergey.server;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import ru.burlutskiysergey.javaschool.card.BankCard;
-import ru.burlutskiysergey.javaschool.card.Card;
-import ru.burlutskiysergey.javaschool.terminal.ATM;
-import ru.burlutskiysergey.javaschool.terminal.ATMCardReader;
-import ru.burlutskiysergey.javaschool.terminal.CardReader;
-import ru.burlutskiysergey.javaschool.terminal.Terminal;
-import ru.burlutskiysergey.javaschool.user.CustomUser;
-import ru.burlutskiysergey.javaschool.user.User;
-
-import java.math.BigDecimal;
 
 @SpringBootApplication
 public class Application {

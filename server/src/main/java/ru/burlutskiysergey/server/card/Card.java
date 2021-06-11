@@ -1,4 +1,4 @@
-package ru.burlutskiysergey.javaschool.card;
+package ru.burlutskiysergey.server.card;
 
 import java.math.BigDecimal;
 

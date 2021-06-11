@@ -1,4 +1,4 @@
-package ru.burlutskiysergey.javaschool.balance;
+package ru.burlutskiysergey.server.balance;
 
 import java.math.BigDecimal;
 

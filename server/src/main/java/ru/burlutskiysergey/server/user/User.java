@@ -1,7 +1,7 @@
-package ru.burlutskiysergey.javaschool.user;
+package ru.burlutskiysergey.server.user;
 
-import ru.burlutskiysergey.javaschool.terminal.Terminal;
-import ru.burlutskiysergey.javaschool.card.Card;
+import ru.burlutskiysergey.server.terminal.Terminal;
+import ru.burlutskiysergey.server.card.Card;
 
 /**
  * Интерфейс пользователя

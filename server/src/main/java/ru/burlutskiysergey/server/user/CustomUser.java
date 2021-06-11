@@ -1,8 +1,8 @@
-package ru.burlutskiysergey.javaschool.user;
+package ru.burlutskiysergey.server.user;
 
 import lombok.Data;
-import ru.burlutskiysergey.javaschool.terminal.Terminal;
-import ru.burlutskiysergey.javaschool.card.Card;
+import ru.burlutskiysergey.server.terminal.Terminal;
+import ru.burlutskiysergey.server.card.Card;
 
 @Data
 public class CustomUser implements User {

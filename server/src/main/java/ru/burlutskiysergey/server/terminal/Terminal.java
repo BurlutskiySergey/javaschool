@@ -1,6 +1,6 @@
-package ru.burlutskiysergey.javaschool.terminal;
+package ru.burlutskiysergey.server.terminal;
 
-import ru.burlutskiysergey.javaschool.card.Card;
+import ru.burlutskiysergey.server.card.Card;
 
 /**
  * Интерфейс терминала

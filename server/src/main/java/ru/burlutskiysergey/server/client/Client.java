@@ -1,6 +1,6 @@
-package ru.burlutskiysergey.javaschool.client;
+package ru.burlutskiysergey.server.client;
 
-import ru.burlutskiysergey.javaschool.account.Account;
+import ru.burlutskiysergey.server.account.Account;
 
 import java.util.List;
 
