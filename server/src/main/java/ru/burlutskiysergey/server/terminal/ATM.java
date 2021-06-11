@@ -1,3 +1,4 @@
+/*
 package ru.burlutskiysergey.server.terminal;
 
 import lombok.Data;
@@ -8,7 +9,9 @@ import java.util.Scanner;
 
 @Data
 public class ATM implements Terminal {
-    /** Поле карт-ридер */
+    */
+/** Поле карт-ридер *//*
+
     private CardReader cardReader;
 
     private int requestPin() {
@@ -48,3 +51,4 @@ public class ATM implements Terminal {
     }
 
 }
+*/
