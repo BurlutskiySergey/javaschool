@@ -17,7 +17,6 @@ public class ClientDTO {
 
     private final String fullName;
 
-    @NotBlank(message = "Необходимо указать количество лет")
     private final int age;
 
     private final List<AccountDTO> accountsDTO;

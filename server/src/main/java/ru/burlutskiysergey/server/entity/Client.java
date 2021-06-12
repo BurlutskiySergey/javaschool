@@ -12,7 +12,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Client1 {
+public class Client {
 
     @Id
     @GeneratedValue
@@ -24,6 +24,6 @@ public class Client1 {
     private String lastName;
     private int age;
 
-    @OneToMany(mappedBy = "client_id")
-    private Set<Account1> accounts;
+    @OneToMany(mappedBy = "client")
+    private Set<Account> accounts;
 }

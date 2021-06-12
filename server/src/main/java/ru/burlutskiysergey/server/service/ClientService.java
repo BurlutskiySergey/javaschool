@@ -11,9 +11,9 @@ import ru.burlutskiysergey.common.dto.AccountDTO;
 import ru.burlutskiysergey.common.dto.BalanceDTO;
 import ru.burlutskiysergey.common.dto.CardDTO;
 import ru.burlutskiysergey.common.dto.ClientDTO;
-import ru.burlutskiysergey.server.entity.Card1;
-import ru.burlutskiysergey.server.entity.Client1;
-import ru.burlutskiysergey.server.entity.Account1;
+import ru.burlutskiysergey.server.entity.Card;
+import ru.burlutskiysergey.server.entity.Client;
+import ru.burlutskiysergey.server.entity.Account;
 import ru.burlutskiysergey.server.exception.ClientNotFoundException;
 import ru.burlutskiysergey.server.repository.ClientCrudRepository;
 
@@ -23,18 +23,21 @@ import ru.burlutskiysergey.server.repository.ClientCrudRepository;
 public class ClientService {
     private ClientCrudRepository clientCrudRepository;
 
+    /**
+     * Получить полные данные по клиенту
+     */
     public ClientDTO getClient(Long id) {
-        Client1 client = clientCrudRepository.findById(id)
+        Client client = clientCrudRepository.findById(id)
                 .orElseThrow(ClientNotFoundException::new);
 
-        Set<Account1> accountSet = client.getAccounts();
+        Set<Account> accountSet = client.getAccounts();
         List<AccountDTO> accountDTOSet = new ArrayList<>();
 
-        for (Account1 account : accountSet) {
-            Set<Card1> cardSet = account.getCards();
+        for (Account account : accountSet) {
+            Set<Card> cardSet = account.getCards();
             List<CardDTO> cardDTOSet = new ArrayList<>();
 
-            for (Card1 card : cardSet) {
+            for (Card card : cardSet) {
                 cardDTOSet.add(new CardDTO(
                     card.getId().intValue(),
                     card.getCardNum(),

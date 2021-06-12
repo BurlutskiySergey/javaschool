@@ -36,10 +36,10 @@ INSERT INTO clients (client_num, first_name, middle_name, last_name, age) VALUES
 ;
 
 INSERT INTO accounts (account_num, currency, balance, client_id) VALUES
-    ('40817810055760515501', 'RUR', 10000, SELECT id FROM clients WHERE client_num = 1),
-    ('40817810055760515502', 'RUR', 20000, SELECT id FROM clients WHERE client_num = 2),
+    ('40817810055760515501', 'RUB', 10000, SELECT id FROM clients WHERE client_num = 1),
+    ('40817810055760515502', 'RUB', 20000, SELECT id FROM clients WHERE client_num = 2),
     ('40817810055760515503', 'USD', 500, SELECT id FROM clients WHERE client_num = 2),
-    ('40817810055760515504', 'RUR', 300000, SELECT id FROM clients WHERE client_num = 3),
+    ('40817810055760515504', 'RUB', 300000, SELECT id FROM clients WHERE client_num = 3),
     ('40817810055760515505', 'USD', 10000, SELECT id FROM clients WHERE client_num = 3),
     ('40817810055760515506', 'EUR', 10000, SELECT id FROM clients WHERE client_num = 3)
 ;

@@ -1,16 +1,18 @@
 package ru.burlutskiysergey.common.dto;
 
 import lombok.*;
-import ru.burlutskiysergey.common.Currency;
 
+import javax.validation.constraints.NotBlank;
 import java.math.BigDecimal;
 
 @RequiredArgsConstructor
 @Getter
 public class BalanceDTO {
 
-    private final Currency currency;
+    @NotBlank(message = "Необходимо указать валюту")
+    private final String currency;
 
+    @NotBlank(message = "Необходимо указать баланс счёта")
     private final BigDecimal balance;
 
 }

@@ -12,7 +12,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Card1 {
+public class Card {
 
     @Id
     @GeneratedValue
@@ -24,5 +24,5 @@ public class Card1 {
 
     @ManyToOne
     @JoinColumn(name = "account_id", nullable = false)
-    private Account1 account_id;
+    private Account account;
 }

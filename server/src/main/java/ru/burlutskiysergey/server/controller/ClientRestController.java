@@ -14,11 +14,12 @@ import ru.burlutskiysergey.server.service.ClientService;
 public class ClientRestController {
     private ClientService clientService;
 
+    /**
+     * Запрос данных клиента
+     */
     @GetMapping("/clients/{clientId}")
-    public ClientDTO getClient(
-            @PathVariable("clientId") Long clientId
-    ) {
-        log.info("Запрос clientId: " + clientId);
+    public ClientDTO getClient(@PathVariable("clientId") Long clientId) {
+        log.info("Запрос на получение данных по клиенту. clientId: " + clientId);
 
         return clientService.getClient(clientId);
     }
