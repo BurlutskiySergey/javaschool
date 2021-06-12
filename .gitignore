@@ -1,0 +1,8 @@
+.idea
+.target
+out
+*.iml
+server/target
+client/target
+common/target
+*.db
